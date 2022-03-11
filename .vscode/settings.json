@@ -7,7 +7,7 @@
         "import sys; sys.path.append('blender_autocomplete/2.91')"
     ],
     // "python.analysis.logLevel": "Trace",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
 
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
@@ -38,4 +38,7 @@
     "search.exclude": {
         "**/test": true,
     },
+    "python.analysis.extraPaths": [
+        "blender_autocomplete/2.91"
+    ],
 }

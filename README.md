@@ -4,6 +4,18 @@
 
 >Originally made by: [Florian Köberle](https://github.com/flo/m3addon) *(aka "println")*.
 
+## 공지사항
+- 블렌더 애드온 개발 연습용으로 포크하였습니다.  
+- 파이썬을 익히기 위한 용도도 있습니다.
+- 대부분 문서화나 주석은 한글로 작성할 예정입니다.
+- 원본 코드는 여기를 사용하세요 : [SC2Mapster/m3addon](https://github.com/SC2Mapster/m3addon).
+
+## 개발환경
+- Blender 3.0.0
+- Python 3.10.1
+- VS Code 1.65.0
+- 
+
 ## Installation
 
 1. Download:

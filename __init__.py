@@ -6733,8 +6733,14 @@ classes = (
 
 
 def register():
+    """
+        애드온 등록 함수.
+    """
+
+    # 클래스 등록
     for cls in classes:
         bpy.utils.register_class(cls)
+
     bpy.types.Scene.m3_animation_index = bpy.props.IntProperty(update=handleAnimationSequenceIndexChange, default=-1)
     bpy.types.Scene.m3_animations = bpy.props.CollectionProperty(type=M3Animation)
     bpy.types.Scene.m3_material_layer_index = bpy.props.IntProperty()
@@ -6788,16 +6794,24 @@ def register():
     bpy.types.Mesh.m3_material_name = bpy.props.StringProperty()
     bpy.types.Mesh.m3_physics_mesh = bpy.props.BoolProperty(default=False, description="Mark mesh to be used for physics shape only (not exported).")
     bpy.types.Mesh.m3_sign_group = bpy.props.StringProperty()
+
     bpy.types.TOPBAR_MT_file_import.append(menu_func_import)
     bpy.types.TOPBAR_MT_file_export.append(menu_func_export)
+
     bpy.types.IMAGE_MT_image.append(menu_func_convertNormalMaps)
     bpy.types.Bone.m3_bind_scale = bpy.props.FloatVectorProperty(default=(1, 1, 1), size=3)
     bpy.types.EditBone.m3_bind_scale = bpy.props.FloatVectorProperty(default=(1, 1, 1), size=3)
 
 
 def unregister():
+    """
+        애드온 해제시 콜백 함수
+    """
+
+    # 클래스 해제
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
+
     bpy.types.TOPBAR_MT_file_import.remove(menu_func_import)
     bpy.types.TOPBAR_MT_file_export.remove(menu_func_export)
     bpy.types.IMAGE_MT_image.remove(menu_func_convertNormalMaps)

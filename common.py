@@ -8,6 +8,12 @@ is_blender = importlib.util.find_spec('bpy') is not None
 
 
 def create_logger():
+    """
+        전역 로그 객체 반환
+
+        Returns:
+            Logger: 전역 로그 객체
+    """
     m3log = logging.getLogger('m3addon')
     m3log.setLevel(logging.DEBUG)
     form = logging.Formatter(
@@ -31,3 +37,6 @@ def create_logger():
 
 
 mlog = create_logger()
+"""
+    전역 로그 객체
+"""
