@@ -52,6 +52,14 @@ class Section:
             self.structureDescription.structureVersion
         )
 
+    def from_instances(self, content, tag=''):
+        if tag:
+            self.content = content
+            self.structureDescription = structures[tag].structureDescription
+        else:
+            self.content = content
+            self.structureDescription = content[0].structureDescription
+
     def determineContentField(self, checkExpectedValue):
         self.content = self.structureDescription.createInstances(buffer=self.rawBytes, count=self.indexEntry.repetitions, checkExpectedValue=checkExpectedValue)
 
